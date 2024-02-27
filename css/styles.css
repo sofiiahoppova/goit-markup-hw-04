@@ -75,6 +75,9 @@ img{
 
 .header-page{
     border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 
+    0px 1px 1px rgba(46, 47, 66, 0.16), 
+    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-page-container{
@@ -171,12 +174,14 @@ img{
     url(/images/hero/background-photo.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: 1440px auto;
+    background-size: cover;
     background-color: #2e2f42;
     padding-top: 188px;
     padding-bottom: 188px;
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
 
 .main-title{
     text-align: center;
@@ -230,13 +235,15 @@ img{
 }
 
 .benefits-list-block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 264px;
     height: 112px;
     border: 1px solid #8E8F99;
     border-radius: 4px;
     background-color: #f4f4fd;
     margin-bottom: 8px;
-    padding: 24px 100px;
 }
 
 .benefits-list-icons{
@@ -301,32 +308,40 @@ img{
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-align: center;
+    margin-bottom: 8px;
 }
 
 .social-media-list{
     display: flex;
     gap: 24px;
     justify-content: center;
-    align-items: center;
-    margin-top: 8px;
+
 }
 
 .social-media-list-item{
     width: 40px;
     height: 40px;
+}
+
+.social-media-link{
+    width: 100%;
+    height: 100%;
     background-color: #4d5ae5;
-    border-radius: 100%;
-    padding-top: 12px;
-    padding-left: 12px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-media-list-icon{
-    fill: #f4f4fd;
+.social-media-link:hover,
+.social-media-link:focus
+{
+    background-color: #404bbf;
 }
 
-.our-team-list-item:hover .social-media-list-item{
-    background-color: #404bbf;
+.social-media-icon {
+    fill: #f4f4fd;
 }
 
 /* =========== Portfolio Section styles =========== */
@@ -342,28 +357,21 @@ img{
     column-gap: 24px;
     row-gap: 48px;
 }
+
 .our-portfolio-list-item{
     width: calc((100% - 48px) / 3);
-    position: relative;
-    overflow: hidden;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.our-portfolio-list-item:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-overley{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #4d5ae5;
-    padding-top: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
-    transform: translatey(100%);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.our-portfolio-list-item:hover .portfolio-overley{
-    transform: translatey(0);
+    position: relative;
+    overflow: hidden;
 }
 
 .portfolio-overley-text{
@@ -371,9 +379,19 @@ img{
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    padding: 40px 32px;
+    transform: translatey(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
+.our-portfolio-list-item:hover .portfolio-overley-text {
+    transform: translatey(0);
+}
 
 .our-portfolio-list-item-container{
     padding: 32px 16px;
@@ -402,6 +420,15 @@ img{
     background-color: #2E2F42;
     padding-top: 100px;
     padding-bottom: 100px;
+}
+
+.footer-page-container{
+    display: flex;
+    align-items: baseline,
+}
+
+.logo-description-container{
+    margin-right: 120px
 }
 
 .footer-logo {
@@ -437,16 +464,11 @@ img{
     margin-bottom: 16px;
 }
 
-.footer-page .social-media-list-item{
-    padding-top: 8px;
-    padding-left: 8px;
-}
-
-.social-media-list-item:hover{
-    background-color: #31D0AA;
-}
-
-.flex{
+.social-media-list{
     display: flex;
-    gap: 120px;
+    gap: 16px;
+}
+
+.footer-page .social-media-link:hover{
+    background-color: #31d0aa;
 }
