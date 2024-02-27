@@ -315,7 +315,6 @@ img{
     display: flex;
     gap: 24px;
     justify-content: center;
-
 }
 
 .social-media-list-item{
@@ -424,11 +423,11 @@ img{
 
 .footer-page-container{
     display: flex;
-    align-items: baseline,
+    align-items: baseline;
 }
 
 .logo-description-container{
-    margin-right: 120px
+    margin-right: 120px;
 }
 
 .footer-logo {
@@ -464,11 +463,12 @@ img{
     margin-bottom: 16px;
 }
 
-.social-media-list{
+.footer-page .social-media-list{
     display: flex;
     gap: 16px;
 }
 
-.footer-page .social-media-link:hover{
+.footer-page .social-media-link:hover,
+.footer-page .social-media-link:focus{
     background-color: #31d0aa;
 }
